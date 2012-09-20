@@ -9,3 +9,10 @@
     .container
       #flash.span6.offset3= bootstrap_flash
       = yield
+    #bottom
+      .navbar.navbar-fixed-bottom
+        .navbar-inner
+          =link_to 'START', '#', class: 'brand', style: 'margin-left:10px;'
+          .navbar-text.pull-right
+            %ul.nav=render 'users/userbar'
+
