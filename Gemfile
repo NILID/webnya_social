@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'haml'
 
+gem 'friendly_id'
+
 gem 'paperclip'
 
 gem 'cancan'
