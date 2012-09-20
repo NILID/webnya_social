@@ -5,6 +5,10 @@
       = devise_error_messages!
 
       .control-group
+        = f.label :login, class: 'control-label'
+        .controls= f.text_field :login
+
+      .control-group
         = f.label :email, class: 'control-label'
         .controls= f.email_field :email
 
