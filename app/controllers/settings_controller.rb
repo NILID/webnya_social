@@ -1,47 +1,20 @@
 class SettingsController < ApplicationController
-  # GET /settings
-  # GET /settings.json
+  load_and_authorize_resource :user
+  load_and_authorize_resource :setting, :through => :user, :singleton => :true
+
   def index
-    @settings = Setting.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @settings }
-    end
   end
 
-  # GET /settings/1
-  # GET /settings/1.json
   def show
-    @setting = Setting.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @setting }
-    end
   end
 
-  # GET /settings/new
-  # GET /settings/new.json
   def new
-    @setting = Setting.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @setting }
-    end
   end
 
-  # GET /settings/1/edit
   def edit
-    @setting = Setting.find(params[:id])
   end
 
-  # POST /settings
-  # POST /settings.json
   def create
-    @setting = Setting.new(params[:setting])
-
     respond_to do |format|
       if @setting.save
         format.html { redirect_to @setting, notice: 'Setting was successfully created.' }
@@ -53,11 +26,7 @@ class SettingsController < ApplicationController
     end
   end
 
-  # PUT /settings/1
-  # PUT /settings/1.json
   def update
-    @setting = Setting.find(params[:id])
-
     respond_to do |format|
       if @setting.update_attributes(params[:setting])
         format.html { redirect_to @setting, notice: 'Setting was successfully updated.' }
@@ -69,10 +38,7 @@ class SettingsController < ApplicationController
     end
   end
 
-  # DELETE /settings/1
-  # DELETE /settings/1.json
   def destroy
-    @setting = Setting.find(params[:id])
     @setting.destroy
 
     respond_to do |format|

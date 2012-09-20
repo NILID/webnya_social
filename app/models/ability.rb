@@ -9,6 +9,7 @@ class Ability
        can :manage, :all
     elsif user.role? :user
        can :read, :all
+       can :manage, Setting, user_id: user.id
     else
        can :read, :all
     end

@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :login, :roles
-  # attr_accessible :title, :body
 
   extend FriendlyId
   friendly_id :login, use: :slugged
