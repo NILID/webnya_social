@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920081244) do
+ActiveRecord::Schema.define(:version => 20120920120117) do
+
+  create_table "settings", :force => true do |t|
+    t.string   "bg_file_name"
+    t.string   "bg_content_type"
+    t.integer  "bg_file_size"
+    t.datetime "bg_updated_at"
+    t.integer  "user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "settings", ["user_id"], :name => "index_settings_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
