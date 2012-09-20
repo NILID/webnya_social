@@ -1,11 +1,13 @@
 Http::Application.routes.draw do
-  resources :settings
+
 
   devise_for :users
 
   resources :users, only: [:index, :show] do
     resource :setting
   end
+
+  resources :settings
 
   root to: 'main#index'
 
