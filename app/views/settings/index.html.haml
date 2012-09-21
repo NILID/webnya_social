@@ -1,0 +1,7 @@
+%h1 Listing settings
+
+- @settings.each do |setting|
+  = link_to setting.bg, user_setting_path(setting.user)
+  = link_to 'Edit', edit_user_setting_path(setting.user) if can? :manage, Setting
+
+= link_to 'New Setting', new_setting_path if can? :manage, Setting
