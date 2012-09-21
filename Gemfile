@@ -19,6 +19,13 @@ gem 'devise-russian'
 
 gem 'russian'
 
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-core'
+  gem 'rspec-instafail', :require => false
+  gem 'rspec-rails'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
