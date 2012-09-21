@@ -1,4 +1,4 @@
-.well
-  .span12
-    = image_tag(@setting.bg.url(:thumb))
-    = link_to 'Edit', edit_user_setting_path(@user)
+.well.well-small#drug
+  %h2 Setting
+  = image_tag(@setting.bg.url(:thumb), class: 'thumbnail')
+  = link_to 'Edit', edit_user_setting_path(@user)

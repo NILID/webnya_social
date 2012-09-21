@@ -21,5 +21,5 @@ $(function() {
    $('#flash').delay(500).fadeIn('normal', function() {
        $(this).delay(2500).fadeOut();
    });
-   $( "#drug" ).draggable();
+   $( "#drug" ).draggable({ opacity: 0.35, handle: "h2", containment: "html" });
 });

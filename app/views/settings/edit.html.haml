@@ -1,5 +1,23 @@
-%h1 Editing setting
+= form_for(@setting, url: user_setting_path(@user), html: { multipart: true, class: 'form form-horizontal well', id: 'drug' }) do |f|
+  %fieldset
+    %legend
+      %h2 Editing setting
+    -if @setting.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@setting.errors.count, "error")
+          prohibited this setting from being saved:
 
-= render 'form'
+        %ul
+          -@setting.errors.full_messages.each do |msg|
+            %li= msg
 
-= link_to 'Show', user_setting_path(@user)
+    .control-group
+      = f.label :bg, class: 'control-label'
+      .controls
+        = f.file_field :bg
+        = image_tag(@setting.bg.url(:thumb), class: 'thumbnail')
+    .form-actions
+      = f.submit
+
+  = link_to 'Show', user_setting_path(@user)
