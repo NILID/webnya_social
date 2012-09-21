@@ -1,3 +1,4 @@
 -if user_signed_in?
-  %li=link_to current_user.email, current_user
-  %li=link_to t(:signout), destroy_user_session_path, :method => :delete
+  %li
+    =link_to(destroy_user_session_path, :method => :delete, confirm: 'Are you sure want to logout?') do
+      %i.icon-off
