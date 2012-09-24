@@ -1,15 +1,13 @@
 #flash {position:absolute;}
 
 #main {
- width: 100%;
+  width: 100%;
 }
 
 #desktop {
   padding: 20px;
-  a {text-decoration: none;}
-}
 
-#desktop {
+  a {text-decoration: none;}
   .drag-icon {
     width: 50px;
     i {
@@ -17,5 +15,8 @@
       color:white;
     }
   }
+
 }
+
+
 
