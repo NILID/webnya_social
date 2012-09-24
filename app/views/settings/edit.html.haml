@@ -21,7 +21,7 @@
     .control-group
       = f.label :icon_color, class: 'control-label'
       .controls
-        #changecolor.input-append.color(data-color="#ffffff" data-color-format="hex")
+        #changecolor.input-append.color(data-color="#{@setting.icon_color !=nil ? @setting.icon_color : '#ffffff'}" data-color-format="hex")
           =f.text_field :icon_color, class: 'span2', value: '', readonly: true
           %span.add-on
             %i(style="background-color: #ffffff")
