@@ -1,0 +1,5 @@
+.span12.drag.well
+  %h2=t :users
+
+  -@users.each do |user|
+    %p=link_to user.login, user
