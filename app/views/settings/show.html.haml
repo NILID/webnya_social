@@ -7,7 +7,7 @@
 
   %p
     icon color:
-    %span(style="background-color: #{@setting.icon_color};padding-left:20px;") &nbsp;
+    %span.thumbnail(style="background-color: #{@setting.icon_color};width: 20px;height:20px;")
 
   %p
     = link_to 'Edit', edit_user_setting_path(@user)
