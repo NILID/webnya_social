@@ -22,7 +22,7 @@
       = f.label :icon_color, class: 'control-label'
       .controls
         #changecolor.input-append.color(data-color="#{@icon_color}" data-color-format="hex")
-          =f.text_field :icon_color, class: 'span2', value: @icon_color, readonly: true
+          =f.hidden_field :icon_color, class: 'span2', value: @icon_color, readonly: true
           %span.add-on
             %i(style="background-color: #{@icon_color}")
 
