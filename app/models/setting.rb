@@ -6,6 +6,6 @@ class Setting < ActiveRecord::Base
 
   has_attached_file :bg, :styles => { :large => "1024x768#", :thumb => "100x100#"}, :convert_options => {:large => "-quality 65"}
 
-
+  validates :icon_color, :css_colour => true
 
 end
