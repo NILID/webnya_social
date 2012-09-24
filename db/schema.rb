@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920130419) do
+ActiveRecord::Schema.define(:version => 20120924105323) do
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120920130419) do
     t.integer  "user_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "icon_color"
   end
 
   add_index "settings", ["user_id"], :name => "index_settings_on_user_id"

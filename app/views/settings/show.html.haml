@@ -1,4 +1,13 @@
 .span12.well.well-small.drag
   %h2 Setting
-  = image_tag(@setting.bg.url(:thumb), class: 'thumbnail')
-  = link_to 'Edit', edit_user_setting_path(@user)
+
+  %p
+    background-image:
+    = image_tag(@setting.bg.url(:thumb), class: 'thumbnail')
+
+  %p
+    icon color:
+    %span(style="background-color: #{@setting.icon_color};padding-left:20px;") &nbsp;
+
+  %p
+    = link_to 'Edit', edit_user_setting_path(@user)

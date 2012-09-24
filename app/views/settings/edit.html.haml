@@ -17,6 +17,15 @@
       .controls
         = f.file_field :bg
         = image_tag(@setting.bg.url(:thumb), class: 'thumbnail')
+
+    .control-group
+      = f.label :icon_color, class: 'control-label'
+      .controls
+        #changecolor.input-append.color(data-color="#ffffff" data-color-format="hex")
+          =f.text_field :icon_color, class: 'span2', value: '', readonly: true
+          %span.add-on
+            %i(style="background-color: #ffffff")
+
     .form-actions
       = f.submit
 

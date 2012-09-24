@@ -1,6 +1,6 @@
 class Setting < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :bg
+  attr_accessible :bg, :icon_color
   validates_attachment :bg, :content_type => { :content_type => [ "image/jpg", "image/jpeg", "image/gif", "image/png", "image/pjpeg", "image/x-png" ] },
                                  :size => { :in => 0..5.megabytes }
 
