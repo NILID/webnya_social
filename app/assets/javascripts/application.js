@@ -21,5 +21,7 @@ $(function() {
    $('#flash').delay(500).fadeIn('normal', function() {
        $(this).delay(2500).fadeOut();
    });
-   $( "#drug" ).draggable({ opacity: 0.35, handle: "h2", containment: "html" });
+   $( "#main .drag" ).draggable({ opacity: 0.35, handle: "h2", containment: "html", stack: "#main .drag" }).resizable({minHeight: 150, minWidth: 150});
+   $( ".drag-icon" ).draggable({ opacity: 0.35 });
+
 });

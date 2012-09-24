@@ -3,14 +3,19 @@
   %head
     %title WEBNYA
     = stylesheet_link_tag    "application", :media => "all"
+    %link(rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css")
     = javascript_include_tag "application"
     = csrf_meta_tags
     -if current_user
       %style
         \ body {background-image: url(#{current_user.setting.bg})}
   %body
-    .container
+    .container#main
       #flash.span6.offset3= bootstrap_flash
+      #desktop
+        .drag-icon
+          =link_to(root_path) do
+            %i.icon-home
       = yield
     #bottom
       =render 'main/panel' if current_user
