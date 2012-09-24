@@ -12,6 +12,7 @@ class SettingsController < ApplicationController
   end
 
   def edit
+    @icon_color = @setting.icon_color !=nil ? @setting.icon_color : '#ffffff'
   end
 
   def create

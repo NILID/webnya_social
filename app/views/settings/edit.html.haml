@@ -21,10 +21,14 @@
     .control-group
       = f.label :icon_color, class: 'control-label'
       .controls
-        #changecolor.input-append.color(data-color="#{@setting.icon_color !=nil ? @setting.icon_color : '#ffffff'}" data-color-format="hex")
-          =f.text_field :icon_color, class: 'span2', value: '', readonly: true
+        #changecolor.input-append.color(data-color="#{@icon_color}" data-color-format="hex")
+          =f.text_field :icon_color, class: 'span2', value: @icon_color, readonly: true
           %span.add-on
-            %i(style="background-color: #ffffff")
+            %i(style="background-color: #{@icon_color}")
+
+    .control-group
+      = f.label :icon_size, class: 'control-label'
+      .controls= f.select :icon_size, ((30..100).map {|i| [i,i] })
 
     .form-actions
       = f.submit

@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20120924105323) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "icon_color"
+    t.integer  "icon_size"
   end
 
   add_index "settings", ["user_id"], :name => "index_settings_on_user_id"
