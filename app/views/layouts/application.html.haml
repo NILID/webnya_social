@@ -8,6 +8,12 @@
     = csrf_meta_tags
     =render 'main/user_style' if current_user
   %body
+    -if current_user
+      :javascript
+        $(document).ready(function() {
+          $.vegas({ src: "#{current_user.setting.bg}"});
+        });
+    .vegas
     .container#main
       #flash.span6.offset3= bootstrap_flash
       #desktop
