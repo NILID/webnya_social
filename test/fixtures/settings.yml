@@ -1,15 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 sett_dima:
-  bg_file_name: MyString
-  bg_content_type: MyString
-  bg_file_size: 1
+  bg_file_name: ru.png
+  bg_content_type: image/png
+  bg_file_size: 10
   bg_updated_at: 2012-02-06 20:10:13
+  icon_size: 40
+  icon_color: #FFFFFF
   user: dima
 
 sett_leha:
-  bg_file_name: MyString
-  bg_content_type: MyString
-  bg_file_size: 1
+  bg_file_name: en.png
+  bg_content_type: image/png
+  bg_file_size: 10
   bg_updated_at: 2012-02-06 20:10:13
+  icon_size: 40
+  icon_color: #000000
   user: leha

@@ -29,9 +29,8 @@ class SettingsControllerTest < ActionController::TestCase
     ability = Ability.new(@user)
     ability.can? :update, @setting
 
-    put :update, user_id: @user, id: @setting.id, setting: { icon_size: 123 }
-#    assert_redirected_to user_setting_path(@user)
-    assert_response :success
+    put :update, user_id: @user, id: @setting.id, setting: { icon_size: 43 }
+    assert_redirected_to user_setting_path(@user)
   end
 
 end
