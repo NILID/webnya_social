@@ -1,9 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  bg: 
-  user: 
+sett_dima:
+  bg_file_name: MyString
+  bg_content_type: MyString
+  bg_file_size: 1
+  bg_updated_at: 2012-02-06 20:10:13
+  user: dima
 
-two:
-  bg: 
-  user: 
+sett_leha:
+  bg_file_name: MyString
+  bg_content_type: MyString
+  bg_file_size: 1
+  bg_updated_at: 2012-02-06 20:10:13
+  user: leha
