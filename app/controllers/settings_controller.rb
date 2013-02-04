@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
-  load_and_authorize_resource :user
+  load_and_authorize_resource :user,  :find_by => :slug
   load_and_authorize_resource :setting, :through => :user, :singleton => :true
 
   def index
