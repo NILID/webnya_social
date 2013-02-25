@@ -6,14 +6,12 @@
     %link(rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css")
     = javascript_include_tag "application"
     = csrf_meta_tags
-    - if current_user
-      = render partial: 'main/user_style', locals: {user: current_user}
+    = render partial: 'main/user_style', locals: {user: @user}
   %body
-    -if current_user
-      :javascript
-        $(document).ready(function() {
-          $.vegas({ src: "#{current_user.setting.bg}"});
-        });
+    :javascript
+      $(document).ready(function() {
+        $.vegas({ src: "#{@user.setting.bg}"});
+      });
     .vegas
     .container#main
       #flash.span6.offset3= bootstrap_flash
@@ -23,4 +21,4 @@
             %i.icon-home
       = yield
     #bottom
-      =render 'main/panel' if current_user
+      =render 'main/panel'
