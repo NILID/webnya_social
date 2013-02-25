@@ -16,6 +16,16 @@ module Http
     # -- all .rb files in that directory are automatically loaded.
     config.action_mailer.default_url_options = { :host => "webnya.ru" }
 
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        :address        => 'address.smtp.com',
+        :port           => 25,
+        :domain         => 'webnya.ru',
+        :authentication => :login,
+        :user_name      => 'username',
+        :password       => 'password'
+    }
+
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W( #{config.root}/lib )

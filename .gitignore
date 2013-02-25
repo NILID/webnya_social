@@ -17,3 +17,6 @@
 /awstats
 /public/awstats
 /public/assets
+/config/application.rb
+/config/database.yml
+
