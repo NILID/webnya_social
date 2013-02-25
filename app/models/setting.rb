@@ -5,7 +5,7 @@ class Setting < ActiveRecord::Base
   has_attached_file :bg,
       :styles => { :large => "1024x768#", :thumb => "100x100#"},
       :convert_options => {:large => "-quality 65"},
-      :default_url => "/assets/default_bg.jpg"
+      :default_url => "/assets/default_bg_:style.jpg"
 
 
   validates_attachment :bg, :content_type => { :content_type => [ "image/jpg", "image/jpeg", "image/gif", "image/png", "image/pjpeg", "image/x-png" ] },
