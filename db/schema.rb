@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(:version => 20120924105323) do
     t.integer  "bg_file_size"
     t.datetime "bg_updated_at"
     t.integer  "user_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "icon_color"
-    t.integer  "icon_size"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "icon_color",      :default => "#FFFFFF"
+    t.integer  "icon_size",       :default => 50
   end
 
   add_index "settings", ["user_id"], :name => "index_settings_on_user_id"
