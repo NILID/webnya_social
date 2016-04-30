@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.22.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,7 +21,10 @@ gem 'devise-russian'
 
 gem 'russian'
 
-# gem 'dropbox-api'
+group :development do
+  gem 'dropbox-api'
+  gem 'dropbox-sdk'
+end
 
 group :development, :test do
   gem 'rspec'
