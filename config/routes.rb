@@ -1,6 +1,13 @@
 Http::Application.routes.draw do
 
 
+  resources :icons do
+    collection do
+      post :update_position
+    end
+  end
+
+
   devise_for :users
 
   resources :users, only: [:index, :show] do

@@ -6,8 +6,7 @@
     %link(rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css")
     = javascript_include_tag "application"
     = csrf_meta_tags
-    - if current_user
-      = render partial: 'main/user_style', locals: {user: current_user}
+    = render partial: 'main/user_style', locals: {user: current_user} if current_user
   %body
     -if current_user
       :javascript
@@ -18,9 +17,10 @@
     .container#main
       #flash.span6.offset3= bootstrap_flash
       #desktop
-        .drag-icon.icon
-          =link_to(root_path) do
-            %i.icon-home
+        -Icon.all.each do |i|
+          .drag-icon.icon{"data-icon-id"=> i.id, "data-get-x" => i.xposition,  "data-get-y" => i.yposition}
+            =link_to(i.url) do
+              %i{class: i.icon}
       = yield
     #bottom
       =render 'main/panel' if current_user

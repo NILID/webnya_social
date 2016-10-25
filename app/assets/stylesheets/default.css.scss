@@ -1,3 +1,5 @@
+@import 'mixins';
+
 #flash {position:absolute;}
 
 #main {
@@ -11,14 +13,19 @@
 
   .icon {
     width: 50px;
+    text-shadow: none;
+    @include transition(text-shadow .2s);
+
     i {
       font-size: 50px;
       color:white;
     }
-    &:hover {text-shadow: 0px 0px 6px rgba(0,0,0,0.6)}
+    &:hover {
+      text-shadow: 0px 0px 6px rgba(0,0,0,0.6);
+      @include transition(text-shadow .2s)
+    }
   }
 
 }
-
 
 

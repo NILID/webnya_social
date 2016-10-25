@@ -1,3 +1,26 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  set = $('#desktop')
+  set_x = set.offset().left
+  set_y = set.offset().top
+
+  $('.drag-icon').each (i) ->
+    $(this).css
+      'top': $(this).data('get-y')
+      'left': $(this).data('get-x')
+
+  $('#desktop .drag-icon').draggable
+    opacity: 0.35
+    containment: "html"
+    stack: $('#desktop .drag-icon')
+    stop: (event, ui) ->
+      pos_x = ui.offset.left - set_x - 20
+      pos_y = ui.offset.top - set_y - 20
+      icon_id = ui.helper.data('icon-id')
+      $.ajax
+        type: 'POST'
+        url: 'icons/update_position'
+        data:
+          xposition: pos_x
+          yposition: pos_y
+          id: icon_id
+

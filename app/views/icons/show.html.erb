@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @icon.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @icon.url %>
+</p>
+
+<p>
+  <b>Xposition:</b>
+  <%= @icon.xposition %>
+</p>
+
+<p>
+  <b>Yposition:</b>
+  <%= @icon.yposition %>
+</p>
+
+
+<%= link_to 'Edit', edit_icon_path(@icon) %> |
+<%= link_to 'Back', icons_path %>

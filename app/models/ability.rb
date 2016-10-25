@@ -9,8 +9,10 @@ class Ability
     if user.role? :admin
        can :manage, :all
        can :read, :all
+       can [:manage, :update_position], Icon
     elsif user.role? :user
        can :manage, Setting, user_id: user.id
+       can [:manage, :update_position], Icon
        can :read, :all
     else
     end

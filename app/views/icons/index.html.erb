@@ -1,0 +1,29 @@
+<h1>Listing icons</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Xposition</th>
+    <th>Yposition</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @icons.each do |icon| %>
+  <tr>
+    <td><%= icon.title %></td>
+    <td><%= icon.url %></td>
+    <td><%= icon.xposition %></td>
+    <td><%= icon.yposition %></td>
+    <td><%= link_to 'Show', icon %></td>
+    <td><%= link_to 'Edit', edit_icon_path(icon) %></td>
+    <td><%= link_to 'Destroy', icon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Icon', new_icon_path %>
