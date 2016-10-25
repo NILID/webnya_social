@@ -10,7 +10,11 @@
   %body
     :javascript
       $(document).ready(function() {
-        $.vegas({ src: "#{@user.setting.bg}"});
+        $('body').vegas({
+          slides: [
+            {src: "#{@user.setting.bg}"}
+          ]
+        });
       });
     .vegas
     .container#main
