@@ -1,12 +1,10 @@
-Http::Application.routes.draw do
-
+Rails.application.routes.draw do
 
   resources :icons do
     collection do
       post :update_position
     end
   end
-
 
   devise_for :users
 

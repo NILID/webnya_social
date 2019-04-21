@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924105323) do
+ActiveRecord::Schema.define(:version => 20161025104747) do
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -24,14 +24,22 @@ ActiveRecord::Schema.define(:version => 20120924105323) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "icons", :force => true do |t|
+    t.string   "title"
+    t.text     "url"
+    t.integer  "xposition"
+    t.integer  "yposition"
+    t.string   "icon"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "settings", :force => true do |t|
     t.string   "bg_file_name"
     t.string   "bg_content_type"
     t.integer  "bg_file_size"
     t.datetime "bg_updated_at"
     t.integer  "user_id"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
     t.string   "icon_color",      :default => "#FFFFFF"
     t.integer  "icon_size",       :default => 50
   end
