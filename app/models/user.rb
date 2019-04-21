@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :login, :roles
+  # attr_accessible :email, :password, :password_confirmation, :remember_me, :login, :roles
 
   extend FriendlyId
   friendly_id :login, use: :slugged
@@ -18,8 +18,6 @@ class User < ActiveRecord::Base
   validates :login, :presence => true, :uniqueness => true
   validates_format_of :login, :with => /\A[A-Za-z0-9_]+\z/
   validates_length_of :login, :maximum => 9
-
-
 
   ROLES = %w[admin user moderator]
 

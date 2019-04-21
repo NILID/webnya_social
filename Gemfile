@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.11.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mime-types', '< 3', require: false
 
-gem 'protected_attributes'
+# gem 'protected_attributes'
 
 gem 'thin'
 
@@ -45,9 +45,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec'
-  gem 'rspec-core'
-  gem 'rspec-instafail', :require => false
   gem 'rspec-rails'
 end
 
@@ -66,7 +63,13 @@ gem 'twitter-bootstrap-rails', '< 3'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'debugger'
+  # gem 'debugger'
+end
+
+group :test do
+  gem 'rails-controller-testing'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do

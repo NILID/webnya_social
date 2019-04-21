@@ -1,3 +1,3 @@
 class Icon < ActiveRecord::Base
-  attr_accessible :title, :url, :xposition, :yposition, :icon
+#  attr_accessible :title, :url, :xposition, :yposition, :icon
 end
