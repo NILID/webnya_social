@@ -20,10 +20,9 @@
     .container#main
       #flash.span6.offset3= bootstrap_flash
       #desktop
-        -Icon.all.each do |i|
+        - Icon.all.each do |i|
           .drag-icon.icon{"data-icon-id"=> i.id, "data-get-x" => i.xposition,  "data-get-y" => i.yposition}
-            =link_to(i.url) do
-              %i{class: i.icon}
+            = link_to(i.url) do
+              %i{ class: i.icon }
       = yield
-    #bottom
-      =render 'main/panel'
+    #bottom= render 'main/panel'
