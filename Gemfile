@@ -33,7 +33,7 @@ gem 'friendly_id'
 
 gem 'paperclip'
 
-gem 'cancan'
+gem 'cancancan'
 gem 'devise'
 gem 'devise-russian'
 

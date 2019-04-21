@@ -5,11 +5,11 @@
       %legend Sign in
       .control-group
         = f.label :email, class: 'control-label'
-        .controls= f.email_field :email, autofocus: true
+        .controls= f.email_field :email, autofocus: true, autocomplete: 'email'
 
       .control-group
         = f.label :password, class: 'control-label'
-        .controls= f.password_field :password, autocomplete: 'off'
+        .controls= f.password_field :password, autocomplete: 'current-password'
 
       -if devise_mapping.rememberable?
         .control-group
