@@ -20,7 +20,7 @@ class SettingsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @setting.update_attributes(params[:setting])
+      if @setting.update_attributes(setting_params)
         format.html { redirect_to user_setting_path(@user), notice: 'Setting was successfully updated.' }
         format.json { head :no_content }
       else
@@ -29,4 +29,11 @@ class SettingsController < ApplicationController
       end
     end
   end
+
+  private
+
+    def setting_params
+      params.require(:setting).permit(:bg, :icon_color, :icon_size)
+    end
+
 end
