@@ -2,11 +2,15 @@
   .nav-item.dropup
     = link_to fa_icon('user'), '#', role: 'button', class: 'btn', id: 'StartmenuDropdown', data: { toggle: 'dropdown' }, aria: { haspopup: "true", expanded: "false" }
     .dropdown-menu{ aria: { labelledby: 'StartmenuDropdown' } }
-      = link_to current_user.login, current_user, class: 'dropdown-item'
+      %h3= link_to current_user.login, current_user, class: 'dropdown-item'
       .dropdown-divider
-      = link_to t(:users), users_path, class: 'dropdown-item'
+      = link_to users_path, class: 'dropdown-item' do
+        = fa_icon 'users', class: 'mr-2'
+        = t (:users)
       .dropdown-divider
-      = link_to t(:settings), user_setting_path(current_user), class: 'dropdown-item'
+      = link_to user_setting_path(current_user), class: 'dropdown-item' do
+        = fa_icon 'cog', class: 'mr-2'
+        = t(:settings)
 
   .navbar-text.float-right
     %ul.nav= render 'users/userbar'

@@ -31,7 +31,7 @@ $ ->
 
   $('#main .drag').draggable(
     opacity: 0.35
-    handle: 'h2'
+    handle: '.card-header'
     containment: 'html'
     stack: '#main .drag').resizable
     minHeight: 150
