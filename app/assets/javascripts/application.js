@@ -15,13 +15,3 @@
 //= require jquery-ui
 //= require activestorage
 //= require_tree .
-
-$(function() {
-   $('#flash').delay(500).fadeIn('normal', function() {
-       $(this).delay(2500).fadeOut();
-   });
-   $( "#main .drag" ).draggable({ opacity: 0.35, handle: "h2", containment: "html", stack: "#main .drag" }).resizable({minHeight: 150, minWidth: 150});
-
-   $('#changecolor').colorpicker();
-
-});
