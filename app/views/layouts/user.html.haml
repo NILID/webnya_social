@@ -12,7 +12,7 @@
       $(document).ready(function() {
         $('body').vegas({
           slides: [
-            {src: "#{@user.setting.bg}"}
+            { src: "#{image_url @user.setting.default_bg}" }
           ]
         });
       });

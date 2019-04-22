@@ -11,11 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
+//= require rails-ujs
 //= require jquery-ui
+//= require activestorage
 //= require twitter/bootstrap
 //= require_tree .
-
 
 $(function() {
    $('#flash').delay(500).fadeIn('normal', function() {
