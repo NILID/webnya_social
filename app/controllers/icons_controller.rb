@@ -1,46 +1,12 @@
 class IconsController < ApplicationController
-  # GET /icons
-  # GET /icons.json
-  def index
-    @icons = Icon.all
+  load_and_authorize_resource
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @icons }
-    end
-  end
+  def index; end
+  def show;  end
+  def new;   end
+  def edit;  end
 
-  # GET /icons/1
-  # GET /icons/1.json
-  def show
-    @icon = Icon.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @icon }
-    end
-  end
-
-  # GET /icons/new
-  # GET /icons/new.json
-  def new
-    @icon = Icon.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @icon }
-    end
-  end
-
-  # GET /icons/1/edit
-  def edit
-    @icon = Icon.find(params[:id])
-  end
-
-  # POST /icons
-  # POST /icons.json
   def create
-    @icon = Icon.new(params[:icon])
 
     respond_to do |format|
       if @icon.save
@@ -54,18 +20,13 @@ class IconsController < ApplicationController
   end
 
   def update_position
-    @icon=Icon.find(params[:id])
     @icon.update_attributes!(xposition: params[:xposition], yposition: params[:yposition])
     render :nothing => true
   end
 
-  # PUT /icons/1
-  # PUT /icons/1.json
   def update
-    @icon = Icon.find(params[:id])
-
     respond_to do |format|
-      if @icon.update_attributes(params[:icon])
+      if @icon.update_attributes(icon_params)
         format.html { redirect_to @icon, notice: 'Icon was successfully updated.' }
         format.json { head :no_content }
       else
@@ -75,10 +36,7 @@ class IconsController < ApplicationController
     end
   end
 
-  # DELETE /icons/1
-  # DELETE /icons/1.json
   def destroy
-    @icon = Icon.find(params[:id])
     @icon.destroy
 
     respond_to do |format|
@@ -86,4 +44,11 @@ class IconsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def icon_params
+      params.require(:icon).permit(:title, :url, :xposition, :yposition, :icon)
+    end
+
 end
