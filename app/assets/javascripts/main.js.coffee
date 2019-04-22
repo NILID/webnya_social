@@ -24,7 +24,9 @@ $ ->
           yposition: pos_y
           id: icon_id
 
-  $('body').vegas slides: [ { src: $('body').data('bg') } ]
+  $('body').vegas
+    slides: [ { src: $('body').data('bg') } ]
+    transition: false
 
   $('#flash').delay(500).fadeIn 'normal', ->
     $(this).delay(2500).fadeOut()
