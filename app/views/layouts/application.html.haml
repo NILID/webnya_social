@@ -10,16 +10,7 @@
     = csrf_meta_tags
     = csp_meta_tag
     = render partial: 'main/user_style', locals: { user: current_user } if current_user
-  %body
-    - if current_user
-      :javascript
-        $(document).ready(function() {
-          $('body').vegas({
-            slides: [
-              {src: "#{current_user.setting.bg}"}
-            ]
-          });
-        });
+  %body{ data: { bg: (user_signed_in? ? current_user.setting.bg : nil) } }
     .vegas
     .container#main
       #flash.span6.offset3= bootstrap_flash
@@ -29,5 +20,4 @@
             =link_to(i.url) do
               %i{ class: i.icon }
       = yield
-    #bottom
-      =render 'main/panel' if current_user
+    #bottom= render 'main/panel' if current_user

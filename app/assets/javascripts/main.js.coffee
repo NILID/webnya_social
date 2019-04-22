@@ -24,3 +24,4 @@ $ ->
           yposition: pos_y
           id: icon_id
 
+  $('body').vegas slides: [ { src: $('body').data('bg') } ]
