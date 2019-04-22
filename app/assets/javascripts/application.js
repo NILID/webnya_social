@@ -14,7 +14,6 @@
 //= require rails-ujs
 //= require jquery-ui
 //= require activestorage
-//= require twitter/bootstrap
 //= require_tree .
 
 $(function() {

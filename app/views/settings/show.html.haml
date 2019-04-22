@@ -1,14 +1,12 @@
-.span12.well.well-small.drag
-  %h2 Setting
-
-  %p
-    background-image:
-    = image_tag(@setting.bg.url(:thumb), class: 'thumbnail')
-
-  %p
-    icon color:
-    %span.thumbnail(style="background-color: #{@setting.icon_color};width: 20px;height:20px;")
-
-  %p
-    = link_to 'Edit', edit_user_setting_path(@user)
+.card.drag
+  .card-header
+    Setting
+    .float-right= link_to fa_icon('edit'), edit_user_setting_path(@user)
+  .card-body
+    %p
+      background-image:
+      = image_tag @setting.bg.url(:thumb), class: 'img-thumbnail'
+    %p
+      icon color:
+      %span.icon-color(style="background-color: #{@setting.icon_color};")
 

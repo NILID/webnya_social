@@ -13,8 +13,8 @@ $ ->
     containment: "html"
     stack: $('#desktop .drag-icon')
     stop: (event, ui) ->
-      pos_x = ui.offset.left - set_x - 20
-      pos_y = ui.offset.top - set_y - 20
+      pos_x = ui.offset.left - set_x
+      pos_y = ui.offset.top - set_y
       icon_id = ui.helper.data('icon-id')
       $.ajax
         type: 'POST'

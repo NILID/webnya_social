@@ -1,0 +1,15 @@
+.card
+  .card-header= @icon.title
+  .card-body
+    %p
+      %b Url:
+      = @icon.url
+    %p
+      %b Xposition:
+      = @icon.xposition
+    %p
+      %b Yposition:
+      = @icon.yposition
+    = link_to 'Edit', edit_icon_path(@icon)
+    |
+    = link_to 'Back', icons_path

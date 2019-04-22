@@ -1,14 +1,12 @@
-.span6.offset3
+.row
+  .col-6.offset-3
+    .card
+      .card-header Forgot your password?
+      .card-body
+        = bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = f.email_field :email, autofocus: true, autocomplete: 'email'
 
-  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'form-horizontal well' }) do |f|
-    %fieldset
-      %legend Forgot your password?
-      = render "devise/shared/error_messages", resource: resource
+          = f.form_group do
+            = f.primary "Send me reset password instructions"
 
-      .control-group
-        = f.label :email, class: 'control-label'
-        .controls= f.email_field :email, autofocus: true, autocomplete: 'email'
-
-      .form-actions= f.submit "Send me reset password instructions", class: 'btn btn-primary'
-
-  = render "devise/shared/links"
+        = render "devise/shared/links"

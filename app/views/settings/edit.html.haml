@@ -1,36 +1,19 @@
-= form_for(@setting, url: user_setting_path(@user), html: { multipart: true, class: 'form form-horizontal well span12 drag' }) do |f|
-  %fieldset
-    %legend
-      %h2 Editing setting
-    -if @setting.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(@setting.errors.count, "error")
-          prohibited this setting from being saved:
+.card.drag
+  .card-header
+    Editing setting
+  .card-body
+    = bootstrap_form_for(@setting, url: user_setting_path(@user), html: { multipart: true }) do |f|
+      = f.file_field :bg
+      = image_tag @setting.bg.url(:thumb), class: 'img-thumbnail'
 
-        %ul
-          -@setting.errors.full_messages.each do |msg|
-            %li= msg
+      #changecolor.input-append.color{ data: { color: "#{@icon_color}", color_format: 'hex' } }
+        = f.label :icon_color, 'Choose icon color'
+        = f.hidden_field :icon_color, class: 'span2', value: @icon_color, readonly: true
+        %span.add-on
+          %i(style="background-color: #{@icon_color}")
 
-    .control-group
-      = f.label :bg, class: 'control-label'
-      .controls
-        = f.file_field :bg
-        = image_tag(@setting.bg.url(:thumb), class: 'thumbnail')
+      = f.select :icon_size, ((30..100).map {|i| [i,i] })
 
-    .control-group
-      = f.label :icon_color, class: 'control-label'
-      .controls
-        #changecolor.input-append.color(data-color="#{@icon_color}" data-color-format="hex")
-          =f.hidden_field :icon_color, class: 'span2', value: @icon_color, readonly: true
-          %span.add-on
-            %i(style="background-color: #{@icon_color}")
-
-    .control-group
-      = f.label :icon_size, class: 'control-label'
-      .controls= f.select :icon_size, ((30..100).map {|i| [i,i] })
-
-    .form-actions
       = f.submit
 
-  = link_to 'Show', user_setting_path(@user)
+    = link_to 'Show', user_setting_path(@user)

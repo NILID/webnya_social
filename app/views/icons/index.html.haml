@@ -1,0 +1,23 @@
+.card
+  .card-header Listing icons
+  .card-body
+    %table.table
+      %tr
+        %th Title
+        %th Url
+        %th Xposition
+        %th Yposition
+        %th
+        %th
+        %th
+      - @icons.each do |icon|
+        %tr
+          %td= icon.title
+          %td= icon.url
+          %td= icon.xposition
+          %td= icon.yposition
+          %td= link_to 'Show', icon
+          %td= link_to 'Edit', edit_icon_path(icon)
+          %td= link_to 'Destroy', icon, method: :delete, data: { confirm: 'Are you sure?' }
+    %br/
+    = link_to 'New Icon', new_icon_path

@@ -1,13 +1,13 @@
 @import 'mixins';
 
-#flash {position:absolute;}
-
-#main {
-  width: 100%;
+html, body {
+  height: 100%;
+  padding-bottom:40px;
 }
 
+#flash {position:absolute;}
+
 #desktop {
-  padding: 20px;
 
   a {text-decoration: none;}
 
@@ -18,7 +18,7 @@
 
     i {
       font-size: 50px;
-      color:white;
+      color: white;
     }
     &:hover {
       text-shadow: 0px 0px 6px rgba(0,0,0,0.6);
@@ -27,4 +27,8 @@
   }
 }
 
-.brand .fa-user{margin-left: 20px;}
+.icon-color {
+  width:   20px;
+  height:  20px;
+  display: inline-block
+}

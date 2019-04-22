@@ -1,0 +1,10 @@
+.row
+  .col-6.offset-3
+    .card
+      .card-header Resend unlock instructions
+      .card-body
+        = bootstrap_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+          = f.form_group do
+            = f.primary "Resend unlock instructions"
+        = render "devise/shared/links"

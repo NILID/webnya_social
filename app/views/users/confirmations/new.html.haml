@@ -1,0 +1,10 @@
+.row
+  .col-6.offset-3
+    .card
+      .card-header Resend confirmation instructions
+      .card-body
+        = bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+          = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+          = f.form_group do
+            = f.primary "Resend confirmation instructions"
+        = render "devise/shared/links"

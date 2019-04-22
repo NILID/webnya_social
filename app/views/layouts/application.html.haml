@@ -12,10 +12,15 @@
     = render partial: 'main/user_style', locals: { user: current_user } if current_user
   %body{ data: { bg: (user_signed_in? ? current_user.setting.bg : nil) } }
     .vegas
-    .container#main
-      #flash.span6.offset3
-        = bootstrap_flash
+    #main
       #desktop
-        = render Icon.all
+        - unless flash.empty?
+          .container-fluid#flash
+            .row
+              .col-6.offset-3
+                - flash.each do |name, msg|
+                  .alert.alert-info= content_tag :div, msg
+
+        = render Icon.all if user_signed_in?
       = yield
     #bottom= render 'main/panel' if current_user
