@@ -4,7 +4,7 @@ class MainControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   setup do
-    @user=users(:dima)
+    @user = users(:dima)
   end
 
   test "should get index" do
