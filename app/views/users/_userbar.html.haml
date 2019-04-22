@@ -1,4 +1,3 @@
 - if user_signed_in?
   %li
-    = link_to(destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure want to logout?' }) do
-      %i.icon-off
+    = link_to fa_icon('power-off'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure want to logout?' }

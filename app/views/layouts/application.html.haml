@@ -5,19 +5,17 @@
     %meta(charset='utf-8')
     %meta(http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1')
     %meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-    = stylesheet_link_tag "application", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
     = csp_meta_tag
     = render partial: 'main/user_style', locals: { user: current_user } if current_user
   %body{ data: { bg: (user_signed_in? ? current_user.setting.bg : nil) } }
     .vegas
     .container#main
-      #flash.span6.offset3= bootstrap_flash
+      #flash.span6.offset3
+        = bootstrap_flash
       #desktop
-        -Icon.all.each do |i|
-          .drag-icon.icon{"data-icon-id"=> i.id, "data-get-x" => i.xposition,  "data-get-y" => i.yposition}
-            =link_to(i.url) do
-              %i{ class: i.icon }
+        = render Icon.all
       = yield
     #bottom= render 'main/panel' if current_user

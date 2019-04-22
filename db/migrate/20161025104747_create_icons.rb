@@ -10,6 +10,6 @@ class CreateIcons < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    Icon.create!(title: 'Main', url: '/', xposition: 0, yposition: 0, icon: 'icon-home')
+    Icon.create!(title: 'Main', url: '/', xposition: 0, yposition: 0, icon: 'home')
   end
 end
