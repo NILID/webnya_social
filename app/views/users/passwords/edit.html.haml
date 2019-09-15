@@ -10,7 +10,7 @@
             autocomplete: "new-password",
             help: @minimum_password_length ? "#{@minimum_password_length} characters minimum" : nil
 
-          = f.password_field :password_confirmation, autocomplete: "off"
+          = f.password_field :password_confirmation, autocomplete: "new-password"
           = f.form_group do
             = f.primary "Change my password"
         = render "devise/shared/links"
