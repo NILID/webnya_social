@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_04_21_200427) do
   create_table "settings", force: :cascade do |t|
     t.string "bg_file_name"
     t.string "bg_content_type"
-    t.bigint "bg_file_size"
+    t.integer "bg_file_size"
     t.datetime "bg_updated_at"
     t.integer "user_id"
     t.string "icon_color", default: "#FFFFFF"
